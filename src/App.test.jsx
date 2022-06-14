@@ -4,14 +4,17 @@ import App from "./App";
 import {render, fireEvent} from '@testing-library/react';
 import * as React from 'react';
 
-describe("App sanity", () => {
+describe("The popup", () => {
 
-  test("Given App | When the user clicks the button | Then open popup", async () => {
+  it("is shown when the button is clicked", () => {
     const tree = render(<App />);
 
     const button = tree.getByTestId("btn");
+    expect(tree.queryByText("Popup text")).toBeFalsy();
     fireEvent.click(button);
-    const popup = tree.getByText("Popup text");
-    expect(popup).toBeTruthy();
+    expect(tree.queryByText("Popup text")).toBeTruthy();
+    fireEvent.click(button);
+    expect(tree.queryByText("Popup text")).toBeFalsy();
   });
+
 });
