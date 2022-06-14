@@ -11,7 +11,7 @@ describe("App sanity", () => {
 
     const button = tree.getByTestId("btn");
     fireEvent.click(button);
-    const popup = await tree.findByText("Popup text");
+    const popup = tree.getByText("Popup text");
     expect(popup).toBeTruthy();
   });
 });
