@@ -13,8 +13,7 @@ describe("The popup", () => {
     expect(tree.queryByText("Popup text")).toBeFalsy();
     fireEvent.click(button);
     expect(tree.queryByText("Popup text")).toBeTruthy();
-    fireEvent.click(button);
-    expect(tree.queryByText("Popup text")).toBeFalsy();
+
   });
 
 });

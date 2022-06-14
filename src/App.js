@@ -7,7 +7,7 @@ function App() {
   const [showPopup, setShowPopup] = useState(false);
   return (
     <div className="App">
-      <button onClick={() => setShowPopup(!showPopup)} data-testid="btn">
+      <button onClick={() => setShowPopup(true)} data-testid="btn">
         Click here to open the popup!
       </button>
       <Modal isOpen={showPopup} centered fade>
